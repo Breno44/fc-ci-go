@@ -3,12 +3,12 @@ on:
   pull_request:
     branches:
       - dvelop
-  strategy:
-    matrix:
-      go: ['1.14', '1.15']
 jobs:
   check-application:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go: ['1.14', '1.15']
     steps: 
       - uses: actions/checkout@v3
       - uses: actions/setup-go@v2
